@@ -12,7 +12,7 @@ sources:
       loaded_at_field: _etl_loaded_at
     tables:
       - name: customers
-        description: one row per customer
+        description: "{{ doc('customers') }}"
         freshness: null
         columns:
           - name: id
@@ -25,7 +25,7 @@ sources:
               - dbt_utils.not_empty_string
 
       - name: orders
-        description: one row per order
+        description: "{{ doc('orders') }}"
         freshness: null
         columns:
           - name: id
